@@ -1,0 +1,129 @@
+Assignments ---
+4-Feb-22
+1.  write  a class/func component that accepts a name from the input field  and shows the name in Upper case  after clicking on the button !!!
+      1. in a span
+      2. in the text field itself ( THINK )
+
+	TF :_____________    button
+	
+	UPPERCASE
+
+
+2.  write a component   that accepts two numbers from text field and a op from dropdown 
+	Create the Calculator component done yesterday ,pass the values of above inputs as props 	
+
+	JSX =  
+	<div>
+	 <input type="number"  />
+	 <input type="number"  />
+	 <select > <option>+</option>.....
+	<Calculator  num1={this.state.num1}  num2={this.state.num2}  op={this.state.op}
+	</div>
+
+3.  write  a component  that accepts a date from the user  and
+	in the span it prints
+
+	show the date in dd-MMM-yyyy format 
+
+
+4.  accept a name from the user and show 3 checkboxes  ( lowercase, uppercase, titlecase )  ( e.target.checked )  
+	depending on what is selected show the name in those cases
+
+5. Modify the Incr component InputExC and F  , also add a decrement button 
+
+________________________________________________
+
+
+3-Feb-22
+1. Write a react APP  function component and export it in different ways. Import the component in index.js in different as discussed in class
+2. Keep App1C in index.js  and close the file . App1C is the class component.
+3. Write a Class Component to display  Hello . add the component in App1C  . observe in browser
+4. Write a function component Square . it gets a props attribute  "num" . the component shows the square of num is a <p> tag.
+	add multiple Square components in App1C  . observe result
+5. Write a class component Calculator . it gets props attributes num1 , num2 ,op  . Depending on op display the calculation in a div tag
+	<Calculator num1="20"  num2="10" op="*"  />
+	Output  =     20 * 10 = 200
+     add multiple Calculator tags in App1C .observe result 
+6. Write a function component MessageRepeater print the props attribute message for num times( num is also a props attribute)
+	print the message num number of times in a <ol> 
+
+7.  TRY out  MyTableC MyTableF  ,  ExplorePropsF     as discussed in class  
+
+
+
+1-Feb-22
+1. Write ajax html to call getAllBooks method on the spring boot server. 
+2. write ajax html that will show a dropdown of all booknames 
+	when a show-dropdown button is clicked.
+
+3. write ajax html to insert book in the table
+( USE appropriate spring boot controllers , test them using postman ,then call them from AJAX ) 
+
+
+
+
+31-Jan-22
+1. Type the destructuring.js and understand the syntax
+2. Run the htmlvalidate2 htmlvalidate3 formvalidate4 formvalidate5 html files, make changes observe the way the forms are submitted, observe how the submit is done only if validation is successful.
+3. Type all the jquery htmls done in the class. a1.html,a2.html,dataattribute.html, animate.html, traversal.html, descendants.html, fadein.html, stop.html
+
+4. Write a Jquery html that shows a check box and a p tag ( the p tag has a poem in it. initially the p tag is hidden ), when the user checks the checkbox ,show the poem in p tag, when the checkbox is unchecked the p tag is hidden.
+5. Write a Jquery attribute  colored that can have a value true or false. Write a table that shows the names of all weeks. if the table has the colored data attribute then the table content color should be Blue and table background color should be yellow. if the table has the colored data attribute as false then the table content should be normal black and white
+
+
+29-Jan-22
+1. Type == and  === variations from equalityex file uploaded. make changes observe results
+2. Create a class Product using class notation. add three parameters productName, cost and expiryDate. ( inside the constructor )
+ - add get set for each property (outside the constructor , cost should not be negative, productName should not be more than 30 chars, expiryDate should not be before 1-Jan-2000  )
+ - add show details in prototype of Product ( outside the constructor)
+- create a few objects of Product. Add each object in an array
+- use forEach on the array and call showDetails for each object.
+
+3. Execute inclass.js (uploaded file) . make changes observe result
+4. Execute poly.js ( uploaded file ), make changes observe result
+5. Type content of RegularExp.js ( uploaded file ) observe result
+7. Try out JSON.stringify and JSON.parse as discussed in ex123.html (uploaded file ) . observe output
+8. Write a RegistrationForm.html . Use html validations as follows
+	1. firstname - required
+	2. lastname - required
+	3. uname - required and length between 5 to 10
+	3. password - required and 8 to 15 chars, must begin with a char and it can have chars and numbers and dash and underscore
+	4. date of birth between 1-Jan-1920 to 1-Jan 2005 
+
+    If the field is invalid show red border, if it is valid show green background color. ( refer to uploaded file HTML5validations.html )
+9.  type ex3.html (uploaded file ) and execute
+10. type ex6.html (uploaded file ) and execute
+
+
+
+
+28-Jan-22
+1. Type different function variations discussed in functionex.html
+2. type arrayex2 for sort map and foreach variations
+3. create simple dates using all constructors given in notes and try out date operations as discussed in dateex 
+4. create function constructors and add prototypes as discussed in prototypeex
+5. Modify Navbar to show date in right corner as discussed in class
+6. Accept a string in a textfield and show it in a <p> tag below in uppercase on click of the button
+7. Write a DOM validation code such that if fname and lname text fields are empty and ok button is clicked then show alert else submit the form  and go to another html
+8. Type testex2,textex4 and check_for_blank.html and observe result.
+9. show  a text field and 3 radio buttons -- upper case,lower case title case. when button is clicked show the content of the textfield in a p tag as per the radio button selection
+10.  show  a text field and 3 check boxes -- bold,italics,underline. when button is clicked show the content of the textfield in a p tag as per the check box selection
+
+
+
+
+
+
+27-Jan-22
+
+1. Type the cssboxex.html  and test it. 
+	add at least three more form elements like select, p and input checkbox and add different box properties to each of them
+
+2.  Type the navbarex1.html and test it, change colors, font sizes, menu and menuitem names. add the cssbox.html and ex1.html to the menu items and test it
+
+3. type the ex1.html and test it
+4. install nodejs 
+5. type the ex2.js and run it in terminal as well as on browser
+6. type the stringexample1.js and stringexample2.js and test it
+7. check out the differences between var and let from varlet.html, type code and run all commented code one by one
+8.type the arraytest.js and do variations and test the code

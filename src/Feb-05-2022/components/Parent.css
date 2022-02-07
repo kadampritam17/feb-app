@@ -1,0 +1,11 @@
+.child{
+    margin: 20px;
+    border: 2px solid red;
+    padding: 10px;
+}
+
+.parent{
+    margin: 20px;
+    border: 2px solid blue;
+    padding: 10px;
+}

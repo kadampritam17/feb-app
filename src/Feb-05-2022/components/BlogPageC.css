@@ -1,0 +1,11 @@
+.Comment{
+    margin: 10px;
+    border: 2px solid blue;
+    padding: 2px;
+}
+
+.BlogPageC{
+    margin: 20px;
+    border: 2px solid rgb(123, 28, 167);
+    padding: 10px;
+}
