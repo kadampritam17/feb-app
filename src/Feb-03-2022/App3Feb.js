@@ -1,10 +1,10 @@
-import App1C, * as mylib from "./components/App1C";
-import { App2C } from "./components/App1C";
-import JSXDemoC from "./components/JSXDemoC";
+// import App1C, * as mylib from "./components/App1C";
+// import { App2C } from "./components/App1C";
+// import JSXDemoC from "./components/JSXDemoC";
 import CalculatorC from "./components/CalculatorC";
 import Square from "./components/Square";
 import MessageRepeater from "./components/MessageRepeater";
-import React, { Component }  from 'react';
+import React  from 'react';
 
 
 

@@ -1,12 +1,12 @@
 
-import { Component } from "react";
+import React, { Component } from "react";
 
 class HttpEx extends Component
 {
     constructor()
     {
         super()
-        this.state={name:'',desc:'',cost:0,data:[]}
+        this.state={id:0,name:'',author:'',cost:0,data:[]}
        
     }
 
@@ -14,13 +14,10 @@ class HttpEx extends Component
     componentDidMount()
     {
         console.log("here")
-        var promise = fetch("localhost:9090/product/show", {
-                       "method": "GET",
-                       "headers":{'Content-Type':'application/json'},
+        var promise = fetch("http://localhost:9090/book/show", {
+                       "method": "POST",
                      })
-                     console.log(promise)
         var anotherpromise =promise.then(response => {
-            console.log(response)
                          return response.json()
                     })
         anotherpromise.then(jsondataarr => {
@@ -35,49 +32,50 @@ class HttpEx extends Component
     getData=(e)=>
     {
 
-        var opts = this.state.data.map((obj)=>{return <option>{obj.productName} </option>})    
+        var opts = this.state.data.map((obj)=>{return <option>{obj.bookName} </option>})    
         return opts
     }
 
 
     sendData=(e)=>
     {
-        fetch("http://localhost:8080/product/add", {
-            "method": "POST",
+        fetch("http://localhost:9090/book/add/"+this.state.name + "/" + this.state.cost + "/" + this.state.author , 
+        {
+            "method": "Post",
             "headers":{'Content-Type':'application/json'},
-            "body": JSON.stringify({
-             productName: this.state.name,
-             prodDesc: this.state.desc,
-             cost: this.state.cost
-           })
-          })
+            // "body": JSON.stringify({
+                // bookId: parseInt(this.state.id),
+                // bookName: this.state.name,
+                // bookAuthor: this.state.author,
+                // bookCost: this.state.cost
+        //    })
+        })
          
     }
 
-    /* getDataUsingSimpleJS=(e)=>{
+    getDataUsingSimpleJS=(e)=>{
         var http = new XMLHttpRequest();
         http.onload = function(){
             alert(http.response)
         }
-        http.open('GET','http://localhost:8080/book/allbooks/')
+        http.open('Post','http://localhost:9090/book/show/')
         http.send();
 
     }
- */
+
 
     render()
     {
      
-        return <div>
-            <select>
+        return <div><select>
            {this.getData()}
-        </select>
-
-        {/* <input type="text" onBlur={(event)=>{this.setState({name:event.target.value})} }  placeholder="enter product name"/>
-        <input type="text" placeholder="enter product desc" onBlur={(event)=>{this.setState({desc:event.target.value})}}/>
-        <input type="text" placeholder="enter product cost" onBlur={(event)=>{this.setState({cost:event.target.value})}}/> */}
-        {/* <button onClick={this.sendData}>add</button>
-        <button onClick={this.getDataUsingSimpleJS}>get</button> */}
+            </select>
+        {/* Book Id : <input type="number" onBlur={(event)=>{this.setState({id:event.target.value})} }  placeholder="Enter Book Id"/> */}
+        Book Name : <input type="text" onBlur={(event)=>{this.setState({name:event.target.value})} }  placeholder="Enter Book Name"/>
+        Book Cost : <input type="number" placeholder="Enter Book Cost" onBlur={(event)=>{this.setState({cost:event.target.value})}}/>
+        Book Author : <input type="text" placeholder="Enter Book Author" onBlur={(event)=>{this.setState({author:event.target.value})}}/>
+        <button onClick={this.sendData}>add</button>
+        <button onClick={this.getDataUsingSimpleJS}>get</button>
         </div>
     }
 }

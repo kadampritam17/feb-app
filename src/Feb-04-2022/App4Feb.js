@@ -1,15 +1,15 @@
-import CharCountF from './components/CharCountF'
-import EventF from './components/EventF'
-import EventC from './components/EventC'
-import InputF from './components/InputF';
-import InputC from './components/InputC';
-import UpperC from './components/UpperC';
+// import CharCountF from './components/CharCountF'
+// import EventF from './components/EventF'
+// import EventC from './components/EventC'
+// import InputF from './components/InputF';
+// import InputC from './components/InputC';
+// import UpperC from './components/UpperC';
 import MainCalculatorC from './components/MainCalculatorC';
-import UpperF from './components/UpperF';
+// import UpperF from './components/UpperF';
 import MultiCaseF from './components/MultiCaseF';
 import DateF from './components/DateF';
 import MainCalculatorF from './components/MainCalculatorF';
-import React, { Component }  from 'react';
+import React  from 'react';
 
 
 function App4Feb() {

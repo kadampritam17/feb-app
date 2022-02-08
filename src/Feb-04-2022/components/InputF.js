@@ -1,9 +1,8 @@
 import { useState } from "react";
-import React, { Component }  from 'react';
+import React  from 'react';
 
 
 export default function InputF() {
-  let entryData = "Lets start";
   /* const arr = useState("Lets Start3");
   const entryData2 = arr[0];
   const setEntrydata2 = arr[1]; */

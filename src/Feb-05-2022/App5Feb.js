@@ -2,9 +2,9 @@ import React from 'react';
 // import BlogPageC from './components/BlogPageC';
 // import Http from './components/Http';
 // import ProductF from './components/ProductF';
-// import HttpEx from './components/httpex';
+// import HttpEx from './components/HttpEx';
 // import ParentC from './components/ParentC';
-import NavbarF from './components/Book/NavbarF';
+import NavbarC from './components/Book/NavbarC';
 
 export default function App5Feb() {
   
@@ -17,7 +17,7 @@ export default function App5Feb() {
         {/* <Http></Http> */}
         {/* <ProductF></ProductF> */}
 
-        <NavbarF/>
+        <NavbarC/>
     </div>
   );
 }
