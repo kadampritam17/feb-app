@@ -29,7 +29,7 @@ export default class AddBookC extends Component {
 
   render() {
     return (
-          <div id="para">
+          <div>
             <h2>Add a new book</h2>
             <div className="container">
               <div className="mb-3 row">

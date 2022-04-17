@@ -3,7 +3,7 @@ import './Parent.css';
 
 export default class ParentC extends React.Component {
   
-    state = {val:0}
+    state = {val:0, flag:false}
     doAction = (x) => {
         this.setState({val:x})
         console.log("doAction is called from parent");
@@ -24,8 +24,13 @@ export default class ParentC extends React.Component {
     render() {
     return (<div className="parent">
         <span>this is a Parent</span>
-        <p>Show the child : <input type="checkbox" onClick={()=>{}}></input></p>
-        <Child someactions={this.doAction}></Child>
+        <p>Show child : <input type='checkbox' onClick={(event)=>{
+                if(event.target.checked) 
+                    this.setState({flag: true});
+                    else
+                    this.setState({flag: false});
+            }}/></p>
+        {this.state.flag? <Child someactions={this.doAction}></Child> : null }
         <span>Value is coming from child {this.state.val}</span>
     </div>);
   }

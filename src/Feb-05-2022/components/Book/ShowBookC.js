@@ -4,7 +4,17 @@ import AddBookC from "./AddBookC";
 export default class ShowBookC extends Component {
   constructor() {
     super();
-    this.state = { id: 0, name: "", author: "", cost: 0, data: [] , flag:false};
+    this.state = {
+      id: 0,
+      name: "",
+      author: "",
+      cost: 0,
+      data: [],
+      flag: false,
+      book: {},
+      tableFlag: false
+      // readonlyflag : true
+    };
   }
 
   //CALLBACK method
@@ -29,6 +39,33 @@ export default class ShowBookC extends Component {
     promise.catch((err) => {
       console.log(err);
     });
+  };
+
+  getBookById = (id) => {
+    console.log("here");
+
+    for (let i = 0; i < this.state.data.length; i++) {
+      if (id === this.state.data[i].bookid) {
+        this.setState({ book: this.state.data[i] });
+      }
+    }
+
+    // var promise = fetch(`http://localhost:9090/book/showById/${id}`, {
+    //   method: "POST",
+    // });
+    // var anotherpromise = promise.then((response) => {
+    //   return response.json();
+    // });
+    // anotherpromise.then((jsondataarr) => {
+    //   this.setState({
+    //     book: jsondataarr,
+    //   });
+    //   // console.log(this.state.book);
+    // });
+
+    // promise.catch((err) => {
+    //   console.log(err);
+    // });
   };
 
   updateBook = (id) => {
@@ -57,18 +94,23 @@ export default class ShowBookC extends Component {
     });
   };
 
-   
-
-
   render() {
     return (
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-10">
+            <div className="col-md-9">
               <h2>Book Table</h2>
             </div>
-            <div className="col-6 col-md-2">
+            <div className="col-6 col-md-3">
+              <button
+                className="btn btn-primary mx-1"
+                onClick={() => {
+                  this.setState({ flag: true });
+                }}
+              >
+                add book
+              </button>
               <button
                 type="button"
                 className="btn btn-primary mx-1"
@@ -126,9 +168,20 @@ export default class ShowBookC extends Component {
                         }}
                       />
                     </td>
+
+                    {/* <td>
+                      <input
+                        type="checkbox"
+                        className="form-control"
+                        
+                        onChange={(event) => {
+                          this.setState({ readonlyflag: event.target.value });
+                        }}
+                      /> 
+                    </td> */}
+                    {/* by defalut false readonly => method call => readonly true */}
                     <td>
                       <button
-                        type="button"
                         className="btn btn-primary mx-1"
                         onClick={() => {
                           this.updateBook(obj.bookid);
@@ -137,13 +190,21 @@ export default class ShowBookC extends Component {
                         Update Book
                       </button>
                       <button
-                        type="button"
                         className="btn btn-primary mx-1"
                         onClick={() => {
                           this.deleteBook(obj.bookid);
                         }}
                       >
                         Delete Book
+                      </button>
+                      <button
+                        className="btn btn-primary mx-1"
+                        onClick={() => {
+                          this.getBookById(obj.bookid);
+                          this.setState({ tableFlag: true });
+                        }}
+                      >
+                        Get Book Details
                       </button>
                     </td>
                   </tr>
@@ -153,10 +214,35 @@ export default class ShowBookC extends Component {
           </table>
         </div>
 
+        
         <div className="container">
-          <button onClick={()=>{this.setState({flag:true})}}>add book</button>
-          {this.state.flag && <AddBookC fun={this.getAllBooks} />}
+          {this.state.flag && <div><hr /><AddBookC fun={this.getAllBooks} /></div>}
         </div>
+
+        
+        {this.state.tableFlag && (
+          <div className="container"><hr />
+            <h2>Book details of {this.state.book.bookid}</h2>
+            <table className="table table-hover table-bordered">
+              <thead>
+                <tr>
+                  <td>Id</td>
+                  <td>Name</td>
+                  <td>Cost</td>
+                  <td>Author</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{this.state.book.bookid}</td>
+                  <td>{this.state.book.bookName}</td>
+                  <td>{this.state.book.bookCost}</td>
+                  <td>{this.state.book.bookAuthor}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     );
   }

@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 import './poet.css'
 //import pic from './images/bird2.jpg'
-import pic1 from "./images/birds.jpg"
+import pic1 from "../images/birds.jpg"
+
 
 class Poet extends Component
 {

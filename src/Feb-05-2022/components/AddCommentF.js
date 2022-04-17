@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from "react"
 import './AddCommentF.css'
 
@@ -11,27 +12,27 @@ const AddCommentF = (props)=>{
      */
 
     const setNewNameFuntion = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setNewName(event.target.value)
 
     }
 
     const setNewCommentFunctions =(event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setNewComment(event.target.value)
     }
 
     const addCommentFuntion =() => {
-        console.log(newComment)
-        console.log(newName)
-        console.log(props);
+        // console.log(newComment)
+        // console.log(newName)
+        // console.log(props);
 
         var newCommentObject = { 
             comment: newComment,
             by : newName
         }
 
-        console.log(newCommentObject)
+        // console.log(newCommentObject)
         props.add(newCommentObject)
         setNewComment("")
         setNewName("")
